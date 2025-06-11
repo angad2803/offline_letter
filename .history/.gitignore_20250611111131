@@ -1,0 +1,81 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+*.whl
+
+# Installer logs
+InstallationLog.txt
+maintenancetool.*
+installer.dat
+gpt4all-installer-win64.exe
+vc_redist.x64.exe
+
+# Model and large data files
+resources/*.gguf
+resources/*.bin
+letters_dataset/
+dataset_embeddings.pkl
+saved_responses.txt
+*.pdf
+*.docx
+
+# PyInstaller
+*.spec
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other binaries
+bin/
+lib/
+Licenses/
+
+# Temporary files
+tempCodeRunnerFile.py
+New folder/
+
+# Ignore network and component configs
+network.xml
+components.xml
+
+# Ignore images
+*.png
+*.ico
+
+# Ignore CSVs and datasets
+*.csv
+
+# Ignore QML and Qt build artifacts
+qml/
+qmltooling/
+platforms/
+styles/
+translations/
+imageformats/
+iconengines/
+sqldrivers/
+tls/
+
+# Ignore installer resources
+installerResources/
+
+# Ignore any other build artifacts
+*.dll
+*.exe

@@ -1,0 +1,6 @@
+pandas
+sentence-transformers
+faiss-gpu
+gpt4all
+tkinter
+numpy

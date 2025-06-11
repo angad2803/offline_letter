@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.spec
+
+# Installer logs
+InstallationLog.txt
+
+# Model and large data files
+resources/*.gguf
+resources/*.bin
+letters_dataset/
+dataset_embeddings.pkl
+saved_responses.txt
+*.csv
+*.docx
+*.pdf
+
+# VSCode
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PyInstaller
+*.exe
+*.dll
+*.pyd
+*.manifest
+*.spec
+
+# Other
+*.log
+*.tmp
+
+# Ignore binaries and libraries
+bin/
+lib/
+Licenses/
+
+# Ignore installer files
+*.exe
+*.dat
+*.ini
+
+# Ignore temp files
+tempCodeRunnerFile.py
+New folder/

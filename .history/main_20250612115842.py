@@ -1,10 +1,3 @@
-import os
-import sys
-if getattr(sys, 'frozen', False):
-    # If running as a PyInstaller bundle, add bin to PATH
-    bin_dir = os.path.join(sys._MEIPASS, 'bin')
-    os.environ['PATH'] = bin_dir + os.pathsep + os.environ['PATH']
-
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity

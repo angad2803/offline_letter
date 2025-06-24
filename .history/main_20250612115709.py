@@ -1,10 +1,3 @@
-import os
-import sys
-if getattr(sys, 'frozen', False):
-    # If running as a PyInstaller bundle, add bin to PATH
-    bin_dir = os.path.join(sys._MEIPASS, 'bin')
-    os.environ['PATH'] = bin_dir + os.pathsep + os.environ['PATH']
-
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -84,7 +77,7 @@ def extract_text_from_pdf(file_path):
 try:
     # List files in resources for debugging
     print("Files in resources:", os.listdir(os.path.join(os.getcwd(), "resources")))
-    model_path = os.path.join(os.getcwd(), "resources", "mistral-7b-instruct-v0.1.Q4_K_M.gguf")  # Use Mistral 7B model for text generation
+    model_path = os.path.join(os.getcwd(), "resources", "mistral-7b-instruct-v0.2.Q4_K_M.gguf")  # Use Mistral 7B model for text generation
     if not os.path.exists(model_path):
         # Try fallback: check for .bin extension (some downloads add .bin)
         alt_model_path = model_path + ".bin"

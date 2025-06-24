@@ -1,0 +1,113 @@
+# Offline Letter/Self-Appraisal Response Generator
+
+## Overview
+
+This application is an **offline, local LLM-powered tool** for generating, polishing, and redacting professional letters (including self-appraisals, cover letters, and more). It uses the **Mistral 7B GGUF** model and runs entirely on your Windows machine—no internet or cloud required.
+
+**Key Features:**
+
+- Generate, polish, and redact professional letters based on user input or uploaded files
+- Supports `.docx` and `.pdf` file uploads
+- Custom instructions and section extraction
+- Bullet summary and section extraction modes
+- Redaction and replacement options for sensitive information
+- Manage and expand your own dataset of letters
+- 100% offline: all processing is local, no data leaves your machine
+- Distributable as a standalone Windows executable (no Python required)
+
+---
+
+## Quick Start
+
+### 1. Download & Extract
+
+- Download the `offline_letter_shareable.zip` archive (or build it yourself, see below)
+- Extract all files to a folder (e.g., `D:\offline_letter`)
+
+### 2. Run the App
+
+- Double-click `offline_letter.exe` in the extracted folder
+- The app window will open. You can now:
+  - Enter or paste your letter text
+  - Upload a `.docx` or `.pdf` file
+  - Choose to generate, polish, summarize, or redact
+  - Use custom instructions and redaction options
+
+### 3. (Optional) Manage Dataset
+
+- The `letters_dataset/` folder stores your custom letters and responses
+- You can add, remove, or edit files in this folder to expand your dataset
+
+---
+
+## Building from Source
+
+### Prerequisites
+
+- Windows 10/11 (x64)
+- Python 3.9+
+- [Mistral 7B GGUF model file](resources/mistral-7b-instruct-v0.1.Q4_K_M.gguf) (already included)
+- All required DLLs in `bin/` (already included)
+
+### 1. Install Dependencies
+
+```powershell
+pip install -r requirements.txt
+```
+
+### 2. Build Standalone EXE
+
+```powershell
+pyinstaller --windowed --onefile --icon=gpt4all.ico --add-data "bin;bin" --add-data "resources;resources" main.py
+```
+
+- The EXE will be in the `dist/` folder.
+
+### 3. Create Shareable ZIP
+
+```powershell
+Compress-Archive -Path dist/offline_letter.exe, bin/*, resources/*, gpt4all.ico -DestinationPath offline_letter_shareable.zip
+```
+
+---
+
+## File Structure
+
+```
+main.py                  # Main application code
+requirements.txt         # Python dependencies
+resources/               # LLM model files (Mistral 7B GGUF)
+bin/                     # Required DLLs for model inference
+letters_dataset/         # Your custom letter dataset (ignored by git)
+dist/offline_letter.exe  # Standalone Windows executable
+```
+
+---
+
+## FAQ
+
+**Q: Is this really 100% offline?**  
+A: Yes! All LLM inference and processing is local. No data is sent to the cloud.
+
+**Q: Can I use my own models?**  
+A: Yes, as long as they are in GGUF format and compatible with the inference backend (llmodel.dll).
+
+**Q: How do I add more letter templates?**  
+A: Place your `.txt` or `.docx` files in the `letters_dataset/` folder.
+
+**Q: How do I report issues or contribute?**  
+A: Open an issue or pull request on the GitHub repository.
+
+---
+
+## License
+
+See `Licenses/` folder for model and code licenses.
+
+---
+
+## Credits
+
+- Powered by [Mistral 7B](https://mistral.ai/)
+- Built with [llmodel](https://github.com/nomic-ai/llama.cpp) backend
+- Developed by [Your Name or Organization]
